@@ -1,11 +1,11 @@
-const path = require("path");
-
+const path = require('path');
 
 module.exports = {
-    entry: "./js/index.js",
+    mode: 'development',
+    entry: './js/index.js',
     output: {
-        path: path.resolve(__dirname,"build"),
-        filename: "bundle.js"
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -15,13 +15,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test : /\.css$/,
+                test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             }
         ]
     },
     devServer: {
-      inline: true,
-      port: 10000
-    },
+        inline: true,
+        port: 10000
+    }
 }
